@@ -5,18 +5,16 @@ import json
 from datetime import datetime
 from azure.iot.device import IoTHubDeviceClient, Message
 
-#sql connecction
-import pyodbc
+
 
 
 
 # Set up the connection parameters
-server = 'deepanker' # Replace with your SQL Server name
-database = 'master' # Replace with your database name
-username = 'sa' # Replace with your username
-password = '123456' # Replace with your password
-driver = '{ODBC Driver 17 for SQL Server}' # Use the appropriate ODBC driver for your SQL Server version
-
+server = 'deepanker'
+database = 'master'
+username = 'sa' 
+password = '123456' 
+driver = '{ODBC Driver 17 for SQL Server}' 
 
 
 # Connect to the SQL Server
@@ -36,12 +34,12 @@ device_client = IoTHubDeviceClient.create_from_connection_string(CONNECTION_STRI
 # Initialize message ID counter
 message_id = 0
 
-# Start message sending loop
+
 while True:
-    # Increment message ID counter
+    
     message_id += 1
 
-    # Generate random data
+   
     # device_id = f"device-{message_id}"
     device_id="dev3368"
     data_produced_time = datetime.utcnow().isoformat()
